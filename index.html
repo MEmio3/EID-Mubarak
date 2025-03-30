@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ঈদ সালামি বিকাশে</title>
+    <style>
+        /* Critical inline styles to prevent half-faced image on first load */
+        @media (max-width: 992px) {
+            .personal-image {
+                display: flex !important;
+                justify-content: center !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                overflow: visible !important;
+                right: auto !important;
+                transform: none !important;
+            }
+            .personal-image img {
+                max-width: 100% !important;
+                object-fit: contain !important;
+                object-position: center !important;
+                right: 0 !important;
+                left: 0 !important;
+                margin: 0 auto !important;
+                transform: translateX(0) !important;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        // Immediate-execution image positioning fix
+        document.addEventListener('DOMContentLoaded', function() {
+            const img = document.querySelector('.personal-image img');
+            if (img && window.innerWidth <= 992) {
+                img.style.maxWidth = '100%';
+                img.style.objectFit = 'contain';
+                img.style.objectPosition = 'center';
+                img.style.right = '0';
+                img.style.left = '0';
+                img.style.marginLeft = 'auto';
+                img.style.marginRight = 'auto';
+                img.style.transform = 'translateX(0)';
+            }
+        });
+    </script>
+    <script src="image-center-fix.js"></script>
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>ঈদ এর চাঁদ আকাশে সালামি দিন বিকাশ এ</h1>
+            <div class="moon-stars">
+                <div class="star star1"></div>
+                <div class="star star2"></div>
+                <div class="star star3"></div>
+                <div class="moon"></div>
+                <div class="star star4"></div>
+                <div class="star star5"></div>
+            </div>
+        </header>
+
+        <main>
+            <div class="content-left">
+                <div class="description">
+                    <h2>ঈদ সালামি পাঠান সহজে</h2>
+                    <p>নিচের QR কোডটি স্ক্যান করুন অথবা বিকাশ অ্যাপ দিয়ে সালামি পাঠান।</p>
+                    
+                    <!-- QR Code section -->
+                    <div class="qr-code">
+                        <a href="https://play.google.com/store/apps/details?id=com.bKash.customerapp&pcampaignid=web_share" target="_blank">
+                          <img src="QRcode.jpg" alt="বিকাশ QR কোড" />
+                        </a>
+                      </div>
+                    
+                    <div class="bkash-number">
+                        <p>বিকাশ নম্বর: <a href="tel:+8801912968944">01912968944</a></p>
+                    </div>
+                    
+                    <div class="instructions">
+                        <h3>সালামি পাঠানোর নিয়ম:</h3>
+                        <ol>
+                            <li><b>বিকাশ অ্যাপ ওপেন করুন</b></li>
+                            <li><b>QR কোড স্ক্যান করুন অথবা নাম্বারে সেন্ড মানি করুন</b></li>
+                            <li><b>সালামির পরিমাণ লিখুন</b></li>
+                            <li><b>রেফারেন্সে "ঈদ সালামি" লিখুন</b></li>
+                            <li><b>সেন্ড বাটনে ক্লিক করুন</b></li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right content with personal image -->
+            <div class="content-right">
+                <div class="eid-greeting-top">
+                    <h2>ঈদ মোবারক</h2>
+                </div>
+                <div class="personal-image" style="display: flex; justify-content: center; width: 100%; overflow: visible;">
+                    <img src="Image.png" alt="ব্যক্তিগত ছবি" style="max-width: 100%; object-fit: contain; object-position: center; right: 0; left: 0; margin-left: auto; margin-right: auto; transform: translateX(0);" />
+                    <div class="comic-bubble">
+                        <span class="typing-text"></span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="eid-greeting">
+                    <h2>ঈদ মোবারক</h2>
+                    <p>আপনার এবং আপনার পরিবারের জন্য শুভ কামনা</p>
+                </div>
+                <div class="contact">
+                    <p>যোগাযোগ: <a href="tel:+8801912968944">+8801912968944</a></p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">FaceBook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html> 

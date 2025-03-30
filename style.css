@@ -1,0 +1,1140 @@
+/* Global Styles */
+:root {
+    --primary-pink: #ff9ec0;
+    --secondary-pink: #ffcce0;
+    --light-pink: #fff0f5;
+    --dark-pink: #ff6699;
+    --white: #ffffff;
+    --text-color: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Hind Siliguri', sans-serif;
+    background-color: var(--light-pink);
+    color: var(--text-color);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    overflow: visible;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(to bottom, var(--primary-pink), var(--light-pink));
+    text-align: center;
+    padding: 40px 0;
+    position: relative;
+    overflow: hidden;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 0 4px 15px rgba(255, 102, 153, 0.2);
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: var(--white);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 2;
+    margin-bottom: 10px;
+}
+
+/* Moon and Stars */
+.moon-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.moon {
+    position: absolute;
+    top: 30px;
+    right: 80px;
+    width: 60px;
+    height: 60px;
+    background-color: var(--white);
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+    animation: glow 5s infinite alternate;
+}
+
+.moon::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 48px;
+    height: 48px;
+    background-color: var(--primary-pink);
+    border-radius: 50%;
+    transform: translateX(4px);
+}
+
+.star {
+    position: absolute;
+    background-color: var(--white);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    animation: twinkle 5s infinite alternate;
+}
+
+.star1 {
+    top: 50px;
+    left: 100px;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0.5s;
+}
+
+.star2 {
+    top: 80px;
+    right: 200px;
+    width: 15px;
+    height: 15px;
+    animation-delay: 1s;
+}
+
+.star3 {
+    top: 30px;
+    left: 300px;
+    width: 18px;
+    height: 18px;
+    animation-delay: 1.5s;
+}
+
+.star4 {
+    top: 70px;
+    left: 500px;
+    width: 22px;
+    height: 22px;
+    animation-delay: 2s;
+}
+
+.star5 {
+    top: 40px;
+    right: 300px;
+    width: 16px;
+    height: 16px;
+    animation-delay: 2.5s;
+}
+
+/* Main Content Styles */
+main {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 40px 0;
+    position: relative;
+}
+
+.content-left {
+    flex: 1;
+    min-width: 300px;
+    padding: 30px;
+    background-color: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(255, 102, 153, 0.1);
+    margin-right: 20px;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.content-right {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: stretch;
+    overflow: visible;
+    height: 100%;
+    position: relative;
+}
+
+.eid-greeting-top {
+    text-align: center;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+    animation-delay: 0.5s;
+}
+
+.eid-greeting-top h2 {
+    color: var(--dark-pink);
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-shadow: 1px 1px 3px rgba(255, 102, 153, 0.3);
+    letter-spacing: 1px;
+}
+
+.description h2 {
+    color: var(--dark-pink);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.description p {
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.qr-code {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.qr-code img {
+    max-width: 200px;
+    border: 5px solid var(--secondary-pink);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.qr-code img:hover {
+    transform: scale(1.05);
+}
+
+.bkash-number {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.bkash-number p {
+    color: var(--dark-pink);
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+.bkash-number a {
+    color: var(--dark-pink);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.bkash-number a:hover {
+    color: var(--primary-pink);
+    text-decoration: underline;
+}
+
+.instructions {
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 20px;
+    margin-top: 30px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    box-shadow: 0 4px 15px rgba(255, 102, 153, 0.1);
+}
+
+.instructions h3 {
+    color: var(--dark-pink);
+    margin-bottom: 15px;
+}
+
+.instructions ol {
+    padding-left: 20px;
+}
+
+.instructions li {
+    margin-bottom: 10px;
+}
+
+.personal-image {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+    margin-top: 10px;
+    justify-content: flex-end;
+    overflow: visible;
+    position: relative;
+    width: 100%;
+}
+
+.personal-image img {
+    max-height: 600px;
+    object-fit: cover;
+    object-position: right;
+    filter: drop-shadow(-10px 5px 10px rgba(255, 102, 153, 0.3));
+    opacity: 0;
+    animation: fadeIn 1.5s forwards;
+    position: relative;
+    right: -20px;
+    max-width: none;
+    width: auto;
+}
+
+/* Desktop-specific adjustment for image right alignment */
+@media (min-width: 992px) {
+    .personal-image {
+        width: calc(100% + 20px);
+        margin-right: -20px;
+    }
+    
+    .personal-image img {
+        max-width: none;
+        right: 0;
+    }
+}
+
+/* Footer Styles */
+footer {
+    background: linear-gradient(to top, var(--primary-pink), var(--light-pink));
+    padding: 30px 0;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    margin-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.eid-greeting h2 {
+    color: var(--white);
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.eid-greeting p {
+    color: var(--white);
+    font-size: 1.1rem;
+}
+
+.contact {
+    text-align: right;
+}
+
+.contact p {
+    color: var(--white);
+    margin-bottom: 10px;
+}
+
+.contact a {
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact a:hover {
+    color: var(--text-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-link {
+    color: var(--white);
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Animations */
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+    }
+    100% {
+        box-shadow: 0 0 25px rgba(255, 255, 255, 0.9), 0 0 40px rgba(255, 156, 192, 0.4);
+    }
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.4;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Additional animation classes for JavaScript */
+.fade-in {
+    animation: fadeIn 1s forwards;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    main {
+        flex-direction: column;
+    }
+    
+    .content-left {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+    
+    .content-right {
+        justify-content: center;
+    }
+    
+    .personal-image {
+        display: flex !important;
+        justify-content: center !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: visible !important;
+        margin: 0 auto !important;
+        position: relative !important;
+        right: auto !important;
+        left: auto !important;
+        transform: none !important;
+    }
+    
+    .personal-image img {
+        max-width: 100% !important;
+        object-fit: contain !important;
+        object-position: center !important;
+        right: 0 !important;
+        left: 0 !important;
+        margin: 0 auto !important;
+        position: relative !important;
+        transform: translateX(0) !important;
+    }
+    
+    .container {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    main, .content-right {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    
+    header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Tablet-specific styles for QR code and number */
+@media (min-width: 768px) and (max-width: 991px) {
+    .qr-code {
+        text-align: center;
+        margin: 15px 0;
+    }
+    
+    .bkash-number {
+        text-align: center;
+        margin: 15px 0 25px 0;
+    }
+    
+    .content-right {
+        display: flex;
+        flex-direction: column;
+        row-gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 30px 0;
+    }
+    
+    header h1 {
+        font-size: 1.7rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .contact {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+    
+    /* Adjust sizes for mobile devices but keep the same positioning concept */
+    .personal-image::after {
+        height: 85%;
+        width: 3px;
+        right: 0 !important;
+        bottom: 0 !important;
+        top: auto !important;
+    }
+    
+    .personal-image::before {
+        width: 45%;
+        height: 3px; /* Changed from 1px to 3px to match vertical border */
+        right: 0 !important;
+        bottom: 0 !important;
+    }
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 15px;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    header {
+        padding: 20px 0;
+    }
+    
+    header h1 {
+        font-size: 1.4rem;
+    }
+    
+    main {
+        flex-direction: column;
+        margin-top: 20px;
+        flex: 1;
+        position: relative;
+    }
+    
+    .content-left {
+        position: relative;
+        z-index: 3;
+        margin-bottom: 30px;
+        padding: 15px;
+        max-height: none;
+        overflow-y: visible;
+    }
+    
+    .content-right {
+        margin-bottom: 10px;
+        min-height: unset;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+    
+    /* Side by side layout for QR code and image in mobile */
+    .qr-and-image-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+    
+    .qr-and-number {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 15px;
+    }
+    
+    .qr-code {
+        position: relative;
+        opacity: 1;
+        animation: none;
+        margin: 10px 0;
+        width: 100%;
+    }
+    
+    .qr-code img {
+        max-width: 130px;
+    }
+    
+    .bkash-number {
+        opacity: 1;
+        animation: none;
+        margin: 10px 0;
+        width: 100%;
+    }
+    
+    .bkash-number p {
+        font-size: 1rem;
+    }
+    
+    .personal-image-container {
+        flex: 1;
+        position: relative;
+    }
+    
+    .personal-image {
+        position: relative;
+        height: 100%;
+        text-align: center;
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: visible;
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    
+    .personal-image img {
+        max-height: 300px !important;
+        max-width: 100% !important;
+        transform: translateX(0) !important;
+        right: 0 !important;
+    }
+    
+    .comic-bubble {
+        top: 5% !important;
+        right: 25% !important;
+    }
+    
+    /* Change bubble arrow to point right for mobile */
+    .comic-bubble:before {
+        bottom: 50%;
+        left: auto;
+        right: -14px;
+        transform: translateY(50%);
+        border-width: 12px 0 12px 12px;
+        border-color: transparent transparent transparent #FF69B4;
+    }
+    
+    .comic-bubble:after {
+        bottom: 50%;
+        left: auto;
+        right: -11px;
+        transform: translateY(50%);
+        border-width: 9px 0 9px 9px;
+        border-color: transparent transparent transparent white;
+    }
+    
+    .typing-text {
+        font-size: 14px;
+        line-height: 1.2;
+    }
+    
+    .instructions {
+        opacity: 1;
+        animation: none;
+        padding: 15px;
+        margin-top: 5px;
+        clear: both;
+        width: 100%;
+        background-color: var(--white);
+        border-radius: 20px;
+        box-shadow: 0 4px 15px rgba(255, 102, 153, 0.1);
+    }
+    
+    .moon {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .moon::before {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .star {
+        transform: scale(0.8);
+    }
+    
+    .eid-greeting-top {
+        position: relative;
+        text-align: center;
+        margin-bottom: 10px;
+        margin-top: 10px;
+        opacity: 1;
+        animation: none;
+        order: -1;
+    }
+    
+    .eid-greeting-top h2 {
+        font-size: 1.8rem;
+        color: var(--dark-pink);
+    }
+    
+    .eid-greeting h2 {
+        font-size: 1.5rem;
+    }
+    
+    .eid-greeting p {
+        font-size: 1rem;
+    }
+    
+    .contact p, .social-link {
+        font-size: 0.95rem;
+    }
+    
+    .instructions h3 {
+        font-size: 1.1rem;
+    }
+    
+    .instructions li {
+        font-size: 0.95rem;
+        margin-bottom: 5px;
+    }
+    
+    .description h2 {
+        font-size: 1.5rem;
+    }
+    
+    .description p {
+        font-size: 1rem;
+        margin-bottom: 15px;
+    }
+    
+    footer {
+        margin-top: 20px;
+        padding: 20px 0;
+    }
+}
+
+/* Additional Animations */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    30% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(1.1);
+    }
+}
+
+@keyframes fadeInDelayed {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Additional media query to ensure content-left is visible in desktop */
+@media (min-width: 577px) {
+    .content-left {
+        animation: popUp 0.8s forwards;
+    }
+    
+    .instructions {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+}
+
+/* Pop-up animation for desktop view */
+@keyframes popUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    40% {
+        transform: scale(1.05);
+    }
+    60% {
+        transform: scale(0.98);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Comic Bubble Style */
+.comic-bubble {
+    position: absolute;
+    top: 15%;
+    right: 25%;
+    background-color: white;
+    border: 2px solid #FF69B4;
+    border-radius: 20px;
+    padding: 10px 15px;
+    z-index: 10;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 150px;
+    opacity: 0;
+    animation: bubble-drop 0.5s 1.5s forwards;
+    transform-origin: top center;
+}
+
+.comic-bubble:before {
+    content: '';
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 12px 12px 0;
+    border-style: solid;
+    border-color: #FF69B4 transparent transparent;
+    display: block;
+    width: 0;
+}
+
+.comic-bubble:after {
+    content: '';
+    position: absolute;
+    bottom: -9px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 9px 9px 0;
+    border-style: solid;
+    border-color: white transparent transparent;
+    display: block;
+    width: 0;
+}
+
+.typing-text {
+    color: var(--dark-pink);
+    font-weight: bold;
+    font-size: 1.2rem;
+    overflow: hidden;
+    border-right: .15em solid var(--dark-pink);
+    white-space: normal;
+    margin: 0 auto;
+    letter-spacing: .1em;
+    animation: blink-caret 0.75s step-end infinite;
+    line-height: 1.4;
+    text-align: center;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: var(--dark-pink) }
+}
+
+@keyframes bubble-drop {
+    0% {
+        transform: translateY(-100%) scale(0.5);
+        opacity: 0;
+    }
+    60% {
+        transform: translateY(10%) scale(1.1);
+    }
+    80% {
+        transform: translateY(-5%) scale(0.95);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 992px) {
+    .comic-bubble {
+        top: 10%;
+        right: 15%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 576px) {
+    .comic-bubble {
+        position: absolute;
+        top: 5% !important;
+        right: 25% !important;
+        padding: 6px 10px;
+        max-width: 100px;
+        transform: scale(0.9);
+        z-index: 10;
+    }
+    
+    /* Change bubble arrow to point right for mobile */
+    .comic-bubble:before {
+        bottom: 50%;
+        left: auto;
+        right: -14px;
+        transform: translateY(50%);
+        border-width: 12px 0 12px 12px;
+        border-color: transparent transparent transparent #FF69B4;
+    }
+    
+    .comic-bubble:after {
+        bottom: 50%;
+        left: auto;
+        right: -11px;
+        transform: translateY(50%);
+        border-width: 9px 0 9px 9px;
+        border-color: transparent transparent transparent white;
+    }
+    
+    .typing-text {
+        font-size: 14px;
+        line-height: 1.2;
+    }
+}
+
+/* Tablet-specific styles for side-by-side layout (same as mobile) */
+@media (min-width: 577px) and (max-width: 991px) {
+    /* Side by side layout for QR code and image in tablet */
+    .qr-and-image-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        margin-bottom: 25px;
+        margin-top: 25px;
+    }
+    
+    .qr-and-number {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        margin: 0 auto;
+        padding-top: 25px;
+    }
+    
+    .qr-code {
+        position: relative;
+        opacity: 1;
+        animation: none;
+        margin: 15px 0;
+        width: 100%;
+    }
+    
+    .qr-code img {
+        max-width: 180px;
+    }
+    
+    .bkash-number {
+        opacity: 1;
+        animation: none;
+        margin: 15px 0 25px 0;
+        width: 100%;
+    }
+    
+    .bkash-number p {
+        font-size: 1.1rem;
+    }
+    
+    .personal-image-container {
+        flex: 1;
+        position: relative;
+    }
+    
+    .personal-image {
+        position: relative;
+        height: 100%;
+        text-align: center;
+        margin-top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: visible;
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+    
+    .personal-image img {
+        max-height: 400px !important;
+        right: 0 !important;
+    }
+    
+    /* Instructions styling */
+    .instructions {
+        opacity: 1;
+        animation: none;
+        padding: 20px;
+        margin-top: 25px;
+        clear: both;
+        width: 100%;
+        background-color: var(--white);
+        border-radius: 20px;
+        box-shadow: 0 4px 15px rgba(255, 102, 153, 0.1);
+    }
+    
+    /* Bubble styling for tablet */
+    .comic-bubble {
+        position: absolute;
+        top: 10% !important;
+        right: 30% !important;
+        padding: 8px 15px;
+        max-width: 120px;
+        transform: scale(1);
+        z-index: 10;
+    }
+    
+    /* Change bubble arrow to point right for tablet */
+    .comic-bubble:before {
+        bottom: 50%;
+        left: auto;
+        right: -14px;
+        transform: translateY(50%);
+        border-width: 12px 0 12px 12px;
+        border-color: transparent transparent transparent #FF69B4;
+    }
+    
+    .comic-bubble:after {
+        bottom: 50%;
+        left: auto;
+        right: -11px;
+        transform: translateY(50%);
+        border-width: 9px 0 9px 9px;
+        border-color: transparent transparent transparent white;
+    }
+    
+    /* Content right needs less vertical spacing */
+    .content-right {
+        margin-bottom: 15px;
+        min-height: unset;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+    }
+}
+
+/* Add these critical fixes for image positioning - they will override anything else */
+html, body {
+    overflow-x: hidden !important; /* Prevent horizontal scrolling by default */
+    width: 100% !important;
+    position: relative !important;
+}
+
+/* Remove body borders */
+body:after, body:before {
+    display: none !important;
+}
+
+/* Pink decorative border lines for the personal image */
+.personal-image {
+    position: relative;
+    overflow: visible !important;
+}
+
+/* Vertical pink border on right side */
+.personal-image::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 3px;
+    height: 85%;
+    background: linear-gradient(to top, #ff9ec0, #ff6699);
+    z-index: 10;
+    border-top-left-radius: 8px;
+    box-shadow: -2px 0 8px rgba(255, 102, 153, 0.3);
+    animation: fadeIn 1.5s forwards;
+    pointer-events: none;
+    transform: translateZ(0);
+    will-change: opacity, transform;
+    opacity: 0;
+}
+
+/* Horizontal pink border from right to left */
+.personal-image::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 45%;
+    height: 3px;
+    background: linear-gradient(to left, #ff9ec0, #ff6699);
+    z-index: 10;
+    border-top-left-radius: 8px;
+    box-shadow: 0 -2px 8px rgba(255, 102, 153, 0.3);
+    animation: fadeIn 1.5s forwards;
+    animation-delay: 0.5s;
+    pointer-events: none;
+    transform: translateZ(0);
+    will-change: opacity, transform;
+    opacity: 0;
+}
+
+@media (max-width: 992px) {
+    /* Ensure border lines remain visible on all devices */
+    .personal-image::after,
+    .personal-image::before {
+        display: block !important;
+        opacity: 1 !important;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Adjust sizes for mobile devices but keep the same positioning concept */
+    .personal-image::after {
+        height: 85%;
+        width: 3px;
+        right: 0 !important;
+        bottom: 0 !important;
+        top: auto !important;
+    }
+    
+    .personal-image::before {
+        width: 45%;
+        height: 3px; /* Changed from 1px to 3px to match vertical border */
+        right: 0 !important;
+        bottom: 0 !important;
+    }
+}
+
+/* Special animation for the border lines */
+@keyframes imgBorderGlow {
+    0% {
+        box-shadow: 0 0 5px rgba(255, 102, 153, 0.3);
+        opacity: 0.7;
+    }
+    100% {
+        box-shadow: 0 0 15px rgba(255, 102, 153, 0.6);
+        opacity: 1;
+    }
+}
